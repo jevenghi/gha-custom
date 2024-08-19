@@ -16,6 +16,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
       - name: Test code
@@ -31,6 +33,8 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
+      - name: Get code
+        uses: actions/checkout@v4
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
       - name: Build website
